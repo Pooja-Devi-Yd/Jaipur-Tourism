@@ -1,0 +1,15 @@
+
+http://codepen.io/matt-west/pen/jKnzG?editors=100
+
+http://demos.telerik.com/kendo-ui/
+
+http://jsfiddle.net/PvgGw/
+
+//localhost/phpmyadmin
+
+http://localhost/phpmyadmin/#PMAURL-2:server_import.php?db=&table=&server=1&target=&token=828623695c9535ef14c8be86c34b2391
+
+
+//card payment
+
+http://jsfiddle.net/ryleyb/WFKfq/1/

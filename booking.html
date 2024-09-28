@@ -1,0 +1,203 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Bookings</title>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+        
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+$(window).load(function(){
+$('body').on('focus',".datepicker_multi_start", function(){
+	$(this).datepicker();
+});
+$("#btn").live("click", function() {
+    $('#opt_table').append('<div>fromdate <input  class="datepicker_multi_start" name="datepicker[]"/> to date <input class="datepicker_multi_start" name="datepickerto[]"/></div>');
+});
+});
+function validateForm()
+{
+ var text=document.forms["booking"]["email"].value;
+                 var atpos=text.indexOf("@");
+                 var dotpos=text.lastIndexOf(".");
+                 
+                if(atpos < 1 || dotpos < atpos+2 || dotpos+2 >text.length)
+                {
+                    alert("please enter a valid email address.");
+                    return false;
+                }
+                 var text=document.forms["booking"]["contact"].value;
+                if(booking.contact.value ==="")
+                {
+                    alert("Please enter the phone number.");
+                    return false;
+                }
+                if(isNaN(booking.contact.value))
+                {
+                    alert("Invalid phone number.");
+                    return false;
+                }
+                if((booking.contact.value).length>10)
+                {
+                    alert("Phone number should be 10 digits.");
+                    return false;
+                }
+                if((booking.contact.value).length<10)
+                {
+                    alert("Phone number should be atleast 10 digits.");
+                    return false;
+                }
+                return true;
+            }
+</script>
+
+        
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<a href="home.html"><img src="images/logo2.gif" alt="LOGO" height="112" width="118"></a>
+				</div>
+				<div id="navigation">
+					<ul>
+						<li>
+							<a href="home.html">Home</a>
+						</li>
+						<li>
+							<a href="about.html">About</a>
+						</li>
+						<li>
+							<a href="rooms.html">Rooms</a>
+						</li>
+                                                 <li>
+				                        <a href="foods.html">Food</a>
+                                                </li>
+						<li>
+							<a href="adventure.html">Adventure</a>
+						</li>
+						<li>
+							<a href="gallery.html">Shopping</a>
+						</li>
+						<li>
+							<a href="attractions.html">Attractions</a>
+						</li>
+						<li>
+							<a href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div id="book" class="body">
+							<h1>Book Rooms</h1>
+							<form name="booking" onsubmit="return validateForm();" method="post" action="success.html">
+								<table>
+									<tbody>
+                                                                            <tr><td>Check In: *</td><td> <input class="datepicker_multi_start" name="datepicker[]" required/></td></tr>
+                                                                            <tr><td>Check Out: *</td><td><input class="datepicker_multi_start" name="datepickerto[]" required/></td></tr>
+
+                                                                            <tr>
+                                                                                <td>Select Rooms: </td>
+                                                                                <td>
+                                                                                    <select name="rooms" style="width: 60px">
+                                                                            <option>1</option>
+                                                                            <option>2</option>
+                                                                            <option>3</option>
+                                                                            <option>4</option>
+                                                                            <option>5</option>
+                                                                            </select></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>No of people: </td><td><select name="people" style="width: 60px">
+                                                                                <option>1</option>
+                                                                                <option>2</option>
+                                                                                <option>3</option>
+                                                                                <option>4</option>
+                                                                                <option>5</option>
+                                                                                <option>6</option>
+                                                                            </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                            
+                                                                            <tr>
+											<td class="txtarea">Requirements & Travel Plan:(If any)</td>
+											<td><textarea></textarea></td>
+										</tr>
+                                                                                
+                                                                                <tr>
+											<td>Name: *</td>
+                                                                                        <td><input type="text" value="" class="txtfield" name="name" required/></td>
+										</tr> <tr>
+											<td>Email: *</td>
+                                                                                        <td><label><input type="text" value="" class="txtfield" name="email" placeholder="john@xyz.com" required/></label></td>
+										</tr> <tr>
+											<td class="txtarea">Contact No: *</td>
+                                                                                        <td><input type="text" name="contact" placeholder="enter 10 dight number" required/></td>
+										</tr> <tr>
+											<td></td>
+                                                                                        <% 
+                                                                                        String a = request.getParameter("buttonName");
+                                                                                        %>
+                                                                                <tr><td>Rate / Day:</td>
+                                                                                    <td>
+                                                                                        <input type="text" name="t1" value="<%=a%>">
+                                                                                    </td>
+                                                                                        </tr>
+                                                                        <td><input type="submit" value="Booked"/></td>
+										<tr>
+                                                                                
+											<td><input type="submit" value="Cancelled"></td>
+										</tr>
+									</tbody>
+                                                                </table>                                                                           
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<ul class="navigation">
+					<li>
+						<a href="home.html">Home</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li>
+						<a href="rooms.html">Rooms</a>
+					</li>
+                                         <li>
+				                        <a href="foods.html">Food</a>
+                                         </li>
+					<li>
+						<a href="adventure.html">Adventure</a>
+					</li>
+					<li>
+						<a href="gallery.html">Shopping</a>
+					</li>
+					<li>
+						<a href="attractions.html">Attractions</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+				
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

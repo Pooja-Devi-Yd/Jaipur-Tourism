@@ -1,0 +1,129 @@
+<%-- 
+    Document   : new
+    Created on : Dec 24, 2017, 7:40:11 AM
+    Author     : suham
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css" type="text/css"> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Welcome!You are our new user glad to see you</h1>
+        <script>
+            function validateForm()
+            {
+                var text=document.forms["register"]["uname"].value;
+                if(text === null || text === "")
+                {
+                    alert("Username must be filled in.");
+                    return false;
+                }
+                 var text=document.forms["register"]["email"].value;
+                 var atpos=text.indexOf("@");
+                 var dotpos=text.lastIndexOf(".");
+                 
+                if(atpos < 1 || dotpos < atpos+2 || dotpos+2 >text.length)
+                {
+                    alert("please enter a valid email address.");
+                    return false;
+                }
+                 var text=document.forms["register"]["contact"].value;
+                if(register.contact.value ==="")
+                {
+                    alert("Please enter the phone number.");
+                    return false;
+                }
+                if(isNaN(register.contact.value))
+                {
+                    alert("Invalid phone number.");
+                    return false;
+                }
+                if((register.contact.value).length>10)
+                {
+                    alert("Phone number should be in the range of 10 digits.");
+                    return false;
+                }
+                if((register.contact.value).length <10)
+                {
+                    alert("Phone number should be atleast 10 digits.");
+                    return false;
+                }
+                if(register.password.value === "")
+                {
+                 alert("Enter the password.");
+                 return false;
+                }
+                if(register.password.value.length < 8)
+                {
+                 alert("Enter the password atleast 8 charecters");
+                 return false;
+                }
+                if(register.confirmpassword.value === "")
+                {
+                 alert("Retype your password");
+                 return false;
+                }
+                if(register.confirmpassword.value !== register.password.value)
+                {
+                 alert("Password confirmation does not match.");
+                 return false;
+                }
+                
+                return true;
+                
+            }
+            </script>
+            
+   <form name="register" onsubmit="return validateForm();" method="post" action="newjsp.html">
+            <table>
+                <tr>
+                    <td><h4>Username:</h4></td>
+                    <td>
+                        <input type="text" id="itext" name="uname" placeholder="Enter your sweet name" required/><br>
+                    </td>
+                </tr>
+                 <tr>
+                     <td><h4>Password:</h4></td>
+                    <td>
+                        <input type="password" id="itext" name="password" placeholder="Create your password here" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><h4>Confirm Password:</h4></td>
+                    <td>
+                        <input type="password" id="itext" name="confirmpassword" placeholder="Retype your password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h4>Email:</h4></td>
+                    <td>
+                        <input type="text" id="itext" name="email" placeholder="example@gmail.com" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h4>Contact:</h4></td>
+                    <td>
+                        <input type="text" id="itext" name="contact" placeholder="9878675432" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                   <input type="submit" value="Register!"/> 
+                    </td>
+                </tr>
+            </table>
+        </form>
+            <div align="center">
+             <% if(request.getAttribute("reg")!=null)
+                 {
+		 out.print("<font style='color:red;font-size: 20px;text-align:center'>"+request.getAttribute("reg")+"</font>");
+                 
+		} %>
+            </div>
+    </body>
+</html>

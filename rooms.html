@@ -1,0 +1,138 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Rooms - Bhaccasyoniztas Beach Resort Website Template</title>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <form action="booking.html" name="form1" method="POST">
+    <INPUT TYPE="HIDDEN" NAME="buttonName">
+    
+	<div id="background">
+		<div id="page">
+			<div id="header">
+				<div id="logo">
+					<a href="index.html"><img src="images/logo2.gif" alt="LOGO" height="112" width="118"></a>
+				</div>
+				<div id="navigation">
+					<ul>
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="about.html">About</a>
+						</li>
+						<li class="selected">
+							<a href="rooms.html">Rooms</a>
+						</li>
+                                                <li>
+				                        <a href="foods.html">Food</a>
+                                                </li>
+						<li>
+							<a href="adventure.html">Adventure</a>
+						</li>
+						<li>
+							<a href="gallery.html">Shopping</a>
+						</li>
+						<li>
+							<a href="attractions.html">Attractions</a>
+						</li>
+						<li>
+							<a href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="rcontents">
+				<div class="box">
+					<div>
+						<div class="body">
+                                                    <h1><font style="color: black">Rooms - Bhaccasyoniztas Beach Resort</font></h1>
+							<ul id="rooms">
+								<li>
+									<a href="rooms.html"><img src="images/first-class.jpg" alt="Img"></a>
+									<h2><a href="rooms.html">First Class Room</a></h2>
+									<p>
+										If you value privacy and personalised service above all else, you’ll love our First Class Private room. Each room comes fully equipped adjustable ambient lighting, wardrobe, and privacy divider for central rooms.
+									</p>
+                                                                        <span class="rate"><INPUT TYPE="BUTTON" VALUE="Rate: 2000/Day" ONCLICK="button1()" style="width: 150px;height: 40px"></span>
+								</li>
+								<li>
+									<a href="rooms.html"><img src="images/delux.jpg" alt="Img"></a>
+									<h2><a href="rooms.html">Deluxe Room</a></h2>
+									<p>
+										An ideal living space the Deluxe Rooms overlook a dynamic city view, garden view or pool view. For personal entertainment, the rooms provide broadband internet, 40" satellite LCD TV. Your marble bathroom comes with a shower, separate bathtub and double vanity.
+									</p>
+                                                                        <span class="rate"><INPUT TYPE="BUTTON" VALUE="Rate: 3000/Day" ONCLICK="button2()" style="width: 150px;height: 40px"></span>
+								</li>
+								<li>
+									<a href="rooms.html"><img src="images/suite.jpg" alt="Img"></a>
+									<h2><a href="rooms.html">Suite Room</a></h2>
+									<p>
+										All rooms feature dark oak wood floor, deep walnut furniture, leather clad headboard in pale ivory, hand tufted rug and brilliant colours of the specially commissioned oil paintings. An iPod docking station, WiFi are some of the technology features in each room.
+									</p>
+                                                                        <span class="rate"><INPUT TYPE="BUTTON" VALUE="Rate: 4500/Day" ONCLICK="button3()" style="width: 150px;height: 40px"></span>
+								</li>
+							</ul>
+						</div>
+                                            <SCRIPT LANGUAGE="JavaScript">
+            <!--
+               function button1()
+               {
+                   document.form1.buttonName.value = "2000/Day"
+                   form1.submit()
+               }    
+               function button2()
+               {
+                   document.form1.buttonName.value = "3000/Day"
+                   form1.submit()
+               }    
+               function button3()
+               {
+                   document.form1.buttonName.value = "4500/Day"
+                   form1 .submit()
+               }    
+            // --> 
+        </SCRIPT>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<ul class="navigation">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="about.html">About</a>
+					</li>
+					<li class="active">
+						<a href="rooms.html">Rooms</a>
+					</li>
+                                        <li>
+				                 <a href="foods.html">Food</a>
+                                        </li>
+					<li>
+						<a href="adventure.html">Adventure</a>
+					</li>
+					<li>
+						<a href="gallery.html">Shopping</a>
+					</li>
+					<li>
+						<a href="attractions.html">Attractions</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+				
+			</div>
+			
+		</div>
+	</div>
+</form>
+    </body>
+</html>
